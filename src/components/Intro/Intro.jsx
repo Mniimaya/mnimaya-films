@@ -8,8 +8,8 @@ function Intro() {
             <div className={`container ${styles.container}`}>
                 <MainSlider />
                 <div className={styles.introContent}>
-                    <h2 className={styles.content}>Погрузитесь во вселенную
-                        бесконечного контента и каналов</h2>
+                    <h2 className={styles.content}>
+                        Погрузитесь во вселенную <b>бесконечного</b> контента и каналов</h2>
                     <MainButton classAdd={styles.button} children="Начните бесплатно"></MainButton>
                 </div>
             </div>
