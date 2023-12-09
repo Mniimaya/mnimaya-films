@@ -18,10 +18,12 @@ function Header() {
                 </Link>
                 <div className={`${styles.navContainer} ${isOpen ? styles.active : ""}`}>
                     <nav className={styles.nav}>
-                        <NavLink to="films">Фильмы</NavLink>
-                        <NavLink to="films">Сериалы</NavLink>
-                        <NavLink to="films">Каналы</NavLink>
-                        <NavLink to="films">Музыка</NavLink>
+                        <ul>
+                            <li><NavLink to="films">Фильмы</NavLink></li>
+                            <li><NavLink to="films">Сериалы</NavLink></li>
+                            <li><NavLink to="films">Каналы</NavLink></li>
+                            <li><NavLink to="films">Музыка</NavLink></li>
+                        </ul>
                     </nav>
                     <div className={styles.search}>
                         <label>
