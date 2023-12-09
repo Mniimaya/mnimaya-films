@@ -142,8 +142,11 @@
   }
 
   ul {
+    display: flex;
+    flex-direction: column;
+    row-gap: 30px;
     @include viewport--lg {
-      display: flex;
+      flex-direction: row;
       row-gap: 10px;
       column-gap: 40px;
     }
@@ -224,5 +227,35 @@
   @include viewport--lg {
     margin-top: 0;
     margin-left: auto;
+
+    svg {
+      margin-right: 15px;
+    }
+
+    &:hover,
+    &:hover svg {
+      color: $color-pink;
+      @include trans;
+    }
+
+    &::after {
+      content: '';
+      width: 0;
+      height: 2px;
+      border-radius: 2px;
+      background-color: $color-pink;
+      position: absolute;
+      bottom: -4px;
+      left: 0;
+    }
+
+    &:hover::after {
+      width: 100%;
+      @include trans;
+    }
   }
+}
+
+:global(.navigation li .active) {
+  color: $color-pink;
 }

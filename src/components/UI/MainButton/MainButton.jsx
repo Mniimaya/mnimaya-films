@@ -2,9 +2,9 @@ import React from 'react'
 
 import styles from './MainButton.module.scss'
 
-function MainButton({ children, classAdd }) {
+function MainButton({ children, classAdd, type }) {
     return (
-        <button className={`${styles.btn} ${classAdd}`} type="button" > {children}</button >
+        <button className={`${styles.btn} ${classAdd}`} type={type} > {children}</button >
     )
 }
 

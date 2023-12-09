@@ -14,7 +14,7 @@
 
   &:hover,
   &:active {
-    background-color: $button-hover;
+    transform: scale(1.05);
     @include trans;
   }
 

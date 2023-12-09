@@ -1,6 +1,5 @@
 import React from 'react'
 import { Link } from 'react-router-dom';
-// import { Navigation, Pagination, } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/react';
 
 import styles from './CategorySlider.module.scss'
@@ -9,24 +8,7 @@ import 'swiper/scss';
 import 'swiper/scss/navigation';
 import 'swiper/scss/pagination';
 
-// import {
-//     KinopoiskDev,
-// } from '@openmoviedb/kinopoiskdev_client';
-
-// const kp = new KinopoiskDev('9D0FG1N-TFDMD98-H6PWA8T-0F2CZ09');
-// let dataCard = [];
-// ; (async () => {
-//     const { data, error, message } = await kp.movie.getRandom();
-
-//     if (data) {
-//         let result = data;
-//         dataCard.push(result);
-//         return;
-//     }
-// })();
-
 function CategorySlider({ title }) {
-    // console.log(dataCard[0]["type"])
     return (
         <section className={styles.sectionSlider}>
             <div className='container'>
@@ -44,50 +26,6 @@ function CategorySlider({ title }) {
                     spaceBetween={30}
                     slidesPerView="auto"
                 >
-                    <SwiperSlide className={styles.slide}>
-                        <Link to="/">
-                            <div className={styles.imgWrapper}>
-                                <img src={slideImg} />
-                            </div>
-                        </Link>
-                        <div className={styles.linkWrapper}>
-                            <Link to="/" className={styles.linkTitle}>sc</Link>
-                            <Link to="/" className={styles.linkType}>Драма</Link>
-                        </div>
-                    </SwiperSlide>
-                    <SwiperSlide className={styles.slide}>
-                        <Link to="/">
-                            <div className={styles.imgWrapper}>
-                                <img src={slideImg} />
-                            </div>
-                        </Link>
-                        <div className={styles.linkWrapper}>
-                            <Link to="/" className={styles.linkTitle}>sc</Link>
-                            <Link to="/" className={styles.linkType}>Драма</Link>
-                        </div>
-                    </SwiperSlide>
-                    <SwiperSlide className={styles.slide}>
-                        <Link to="/">
-                            <div className={styles.imgWrapper}>
-                                <img src={slideImg} />
-                            </div>
-                        </Link>
-                        <div className={styles.linkWrapper}>
-                            <Link to="/" className={styles.linkTitle}>sc</Link>
-                            <Link to="/" className={styles.linkType}>Драма</Link>
-                        </div>
-                    </SwiperSlide>
-                    <SwiperSlide className={styles.slide}>
-                        <Link to="/">
-                            <div className={styles.imgWrapper}>
-                                <img src={slideImg} />
-                            </div>
-                        </Link>
-                        <div className={styles.linkWrapper}>
-                            <Link to="/" className={styles.linkTitle}>sc</Link>
-                            <Link to="/" className={styles.linkType}>Драма</Link>
-                        </div>
-                    </SwiperSlide>
                     <SwiperSlide className={styles.slide}>
                         <Link to="/">
                             <div className={styles.imgWrapper}>

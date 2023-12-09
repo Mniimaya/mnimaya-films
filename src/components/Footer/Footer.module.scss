@@ -3,6 +3,7 @@
 .footer {
   background-color: #191919;
   padding: 50px 0 30px;
+  margin-top: auto;
 }
 
 .footerContainer {
@@ -45,6 +46,11 @@
       text-align: left;
       color: $color-gray;
       margin-left: 0;
+
+      &:hover {
+        transition: $anim;
+        color: $color-white;
+      }
     }
   }
 

@@ -1,8 +1,8 @@
 import React from 'react'
 import { Link, NavLink } from 'react-router-dom'
 import styles from './Header.module.scss'
-import logo from '../../assets/logo.svg'
 import LinkClient from '../UI/LinkClient/LinkClient';
+import Logo from './Logo'
 
 function Header() {
     const [isOpen, setIsOpen] = React.useState(false);
@@ -14,15 +14,15 @@ function Header() {
         <header>
             <div className={`container ${styles.container}`}>
                 <Link to="/" className={styles.logoLink}>
-                    <img src={logo} alt="Логотип." />
+                    <Logo></Logo>
                 </Link>
                 <div className={`${styles.navContainer} ${isOpen ? styles.active : ""}`}>
-                    <nav className={styles.nav}>
+                    <nav className={`${styles.nav} navigation`}>
                         <ul>
                             <li><NavLink to="films">Фильмы</NavLink></li>
-                            <li><NavLink to="films">Сериалы</NavLink></li>
-                            <li><NavLink to="films">Каналы</NavLink></li>
-                            <li><NavLink to="films">Музыка</NavLink></li>
+                            <li><NavLink to="serials">Сериалы</NavLink></li>
+                            <li><NavLink to="">Каналы</NavLink></li>
+                            <li><NavLink to="">Музыка</NavLink></li>
                         </ul>
                     </nav>
                     <div className={styles.search}>
