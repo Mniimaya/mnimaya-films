@@ -1,5 +1,5 @@
 import React from 'react'
-import MainButton from '../UI/MainButton'
+import MainButton from '../UI//MainButton/MainButton'
 import MainSlider from '../MainSlider/MainSlider'
 import styles from './Intro.module.scss'
 function Intro() {
