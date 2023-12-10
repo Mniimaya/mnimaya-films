@@ -105,6 +105,10 @@ body {
     max-width: 1240px;
   }
 
+  @media (min-width: 1440px) {
+    max-width: 1400px;
+  }
+
   @include viewport--xl {
     max-width: 1700px;
   }
@@ -166,6 +170,11 @@ button {
 button::-moz-focus-inner {
   padding: 0;
   border: 0;
+}
+
+header {
+  position: relative;
+  z-index: 3;
 }
 
 [hidden] {

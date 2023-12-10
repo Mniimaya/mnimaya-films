@@ -4,7 +4,7 @@ import styles from './MainButton.module.scss'
 
 function MainButton({ children, classAdd, type }) {
     return (
-        <button className={`${styles.btn} ${classAdd}`} type={type} > {children}</button >
+        <button className={`${styles.btn} ${classAdd}`} type={type} > {children}</button>
     )
 }
 

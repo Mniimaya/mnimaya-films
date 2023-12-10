@@ -12,6 +12,12 @@ function CategorySlider({ title, data }) {
         return rating > 6 ? "rating-good" : "rating-bad";
     }
 
+    const typePage = {
+        "animated-series": "serial",
+        "tv-series": "serial",
+        "movie": "film"
+    }
+
     return (
         <section className={styles.sectionSlider}>
             <div className='container'>
@@ -32,14 +38,14 @@ function CategorySlider({ title, data }) {
                     {
                         data.length > 0 ? data.map((item) => {
                             return <SwiperSlide className={styles.slide}>
-                                <Link to="/">
+                                <Link to={`${typePage[String(item.type)]}/${item.id}`}>
                                     <div className={styles.imgWrapper}>
                                         <img src={item.poster.previewUrl} />
                                     </div>
                                     <span className={`rating-card ${getRatingClass(item.rating.kp)}`}>{String(item.rating.kp).slice(0, 3)}</span>
                                 </Link>
                                 <div className={styles.linkWrapper}>
-                                    <Link to="/" className={styles.linkTitle}>{item.name}</Link>
+                                    <Link to={`${typePage[String(item.type)]}/${item.id}`} className={styles.linkTitle}>{item.name}</Link>
                                 </div>
                             </SwiperSlide>
                         }) : ""
