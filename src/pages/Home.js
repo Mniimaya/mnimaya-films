@@ -3,6 +3,7 @@ import Intro from '../components/Intro/Intro'
 import CategorySlider from '../components/CategorySlider/CategorySlider'
 import { sliderApi } from '../API/SliderApi'
 
+
 function Home() {
     const [itemsTop, setItemsTop] = React.useState('');
 
@@ -11,14 +12,14 @@ function Home() {
         sliderApi.getTop10((data) => setItemsTop(data));
     };
 
-    React.useCallback(() => {
+    React.useEffect(() => {
         requestsSliders();
     }, [])
 
     return (
         <>
             <Intro />
-            <CategorySlider title="Топ 10 в онлайн-кинотеатре" />
+            {itemsTop ? <CategorySlider data={itemsTop.docs} title="Топ 10 в онлайн-кинотеатре" /> : ""}
         </>
 
     )

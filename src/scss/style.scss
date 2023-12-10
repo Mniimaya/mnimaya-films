@@ -261,3 +261,23 @@ body.lock {
     margin-right: 8px;
   }
 }
+
+.rating-card {
+  position: absolute;
+  padding: 3px;
+  top: 3px;
+  right: 3px;
+  border-radius: 7px;
+  color: $color-white;
+  font-size: 14px;
+  font-family: $font-additional;
+  line-height: 1;
+}
+
+.rating-card.rating-good {
+  background-color: $color-green;
+}
+
+.rating-card.rating-bad {
+  background-color: $color-red;
+}

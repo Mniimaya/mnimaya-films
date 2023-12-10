@@ -3,12 +3,15 @@ import { Link } from 'react-router-dom';
 import { Swiper, SwiperSlide } from 'swiper/react';
 
 import styles from './CategorySlider.module.scss'
-import slideImg from '../../assets/slide-film.png'
 import 'swiper/scss';
 import 'swiper/scss/navigation';
 import 'swiper/scss/pagination';
 
-function CategorySlider({ title }) {
+function CategorySlider({ title, data }) {
+    const getRatingClass = (rating) => {
+        return rating > 6 ? "rating-good" : "rating-bad";
+    }
+
     return (
         <section className={styles.sectionSlider}>
             <div className='container'>
@@ -26,17 +29,21 @@ function CategorySlider({ title }) {
                     spaceBetween={30}
                     slidesPerView="auto"
                 >
-                    <SwiperSlide className={styles.slide}>
-                        <Link to="/">
-                            <div className={styles.imgWrapper}>
-                                <img src={slideImg} />
-                            </div>
-                        </Link>
-                        <div className={styles.linkWrapper}>
-                            <Link to="/" className={styles.linkTitle}>sc</Link>
-                            <Link to="/" className={styles.linkType}>Драма</Link>
-                        </div>
-                    </SwiperSlide>
+                    {
+                        data.length > 0 ? data.map((item) => {
+                            return <SwiperSlide className={styles.slide}>
+                                <Link to="/">
+                                    <div className={styles.imgWrapper}>
+                                        <img src={item.poster.previewUrl} />
+                                    </div>
+                                    <span className={`rating-card ${getRatingClass(item.rating.kp)}`}>{String(item.rating.kp).slice(0, 3)}</span>
+                                </Link>
+                                <div className={styles.linkWrapper}>
+                                    <Link to="/" className={styles.linkTitle}>{item.name}</Link>
+                                </div>
+                            </SwiperSlide>
+                        }) : ""
+                    }
                 </Swiper >
             </div>
         </section>
